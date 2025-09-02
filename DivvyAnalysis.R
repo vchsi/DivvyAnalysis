@@ -90,7 +90,7 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual + all_trips_v2$d
 
 - From this analysis, we can see that Customers, while having less rides, often ride
 their bikes longer than average compared to subscribers. This may be in part because of 
-planned usage, where customers will use Cyclistic's service if they really need to for
+planned usage, where customers will use Divvy's service if they really need to for
 longer trips, compared to subscribers, who use it more casually and liberally.
 "
 
@@ -146,10 +146,10 @@ ggsave('divvy_analysis_chart_weekday_vs_avgduration_membercasual.png',
 "
 Upon looking in the graphs (especially the combined one), we can see the trend identified above.
 Customers have higher average ride lengths (about ~2200 seconds or 36m, 40s) compared to subscribers
-(about ~700 seconds or 11m, 40s). This infers that customers are on average likely to ride their Cyclistic
+(about ~700 seconds or 11m, 40s). This infers that customers are on average likely to ride their Divvy
 bike almost 3x the length as subscribers. Therefore, if the company wants to target less consistent, but 
 longer-duration riders, they should focus on attracting more non-subscribing customers. This will be beneficial
-if Cyclistic bills per minute/timewise compared to upfront flat-rate.
+if Divvy bills per minute/timewise compared to upfront flat-rate.
 
 On the other hand, the number of rides chart show that Subscribers have higher 
 "

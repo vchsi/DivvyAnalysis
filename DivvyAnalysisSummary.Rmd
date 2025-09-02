@@ -1,7 +1,7 @@
 ---
-title: 'Cyclistic Data Analysis Report: Subscribers or Customers?'
+title: 'Divvy Data Analysis Report: Subscribers or Customers?'
 author: "Vincent Hsiao"
-date: "3/5/2025"
+date: "05/05/2025"
 output:
   html_document: default
   pdf_document: default
@@ -17,7 +17,7 @@ a picture of a row of bike-share bikes
 
 -   
 
-    ###### Import Cyclistic's Data
+    ###### Import Divvy's Data
 
 -   
 
@@ -41,11 +41,6 @@ knitr::include_graphics("BikeShareSubscription.png")
 
 ## Introducing my Subject
 
-```{r, echo=FALSE, out.width="250px", out.height="250px"}
-knitr::include_graphics("Cyclistic.png")
-
-```
-
 | 
 
 ```{r, echo=FALSE, out.width="250px", out.height="250px"}
@@ -53,7 +48,7 @@ knitr::include_graphics("Cyclistic.png")
 knitr::include_graphics("Divvy.png")
 ```
 
-##### My Data Analysis project will be on the fictional bike share company Cyclistic, which is based on the real-life bike sharing company Divvy, based in Chicago.
+##### My Data Analysis project will be on the Chicago-based bikeshare company Divvy.
 
 ### Analysis Tools
 
@@ -69,7 +64,7 @@ Based on the project specifications, this analysis will focus on providing a ans
 
 -   
 
-    #### How do annual members and casual riders use [Cyclistic/Divvy] bikes differently?
+    #### How do annual members and casual riders use [Divvy] bikes differently?
 
 -   
 
@@ -77,7 +72,7 @@ Based on the project specifications, this analysis will focus on providing a ans
 
 ## **Introducing the Data**
 
-We will be using publicly available comma-separated value data sheets (DivvyQ12019.csv and DivvyQ12020.csv) available from [Divvy's data bank](https://divvybikes.com/system-data). These two spreadsheets contain Cyclistic’s ridership data from 2019 Quarter 1 and 2020 Quarter 1. Specifically, for the first file Divvy_Trips_2019_Q1 we are given the:
+We will be using publicly available comma-separated value data sheets (DivvyQ12019.csv and DivvyQ12020.csv) available from [Divvy's data bank](https://divvybikes.com/system-data). These two spreadsheets contain Divvy's ridership data from 2019 Quarter 1 and 2020 Quarter 1. Specifically, for the first file Divvy_Trips_2019_Q1 we are given the:
 
 -   Unique **trip_id** of a bicycle trip (number)
 
@@ -268,7 +263,7 @@ aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = min)
 aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual, FUN = sd)
 ```
 
-From this initial analysis, we can already tell a trend forming between a rider's membership status and their average ride length. Based on what we're seeing, it seems like **non-subscribers (casual customers) From this analysis, we can see that Customers, while having less rides, often ride their bikes longer than average compared to subscribers**. This may be in part because of planned usage, where customers will use Cyclistic's service if they really need to for longer trips, compared to subscribers, who use it more casually and liberally.
+From this initial analysis, we can already tell a trend forming between a rider's membership status and their average ride length. Based on what we're seeing, it seems like **non-subscribers (casual customers) From this analysis, we can see that Customers, while having less rides, often ride their bikes longer than average compared to subscribers**. This may be in part because of planned usage, where customers will use Divvy's service if they really need to for longer trips, compared to subscribers, who use it more casually and liberally.
 
 However, before finalizing this, we must dig a bit deeper and look at more of the data to make a informed decision. Next, let's analyze how the day of the week will affect the average ride time for both subscribing members and casual customers. We will use a more complex multi-part pipe function to do this.
 
@@ -340,7 +335,7 @@ all_trips_v2 %>%
   geom_col(position = "dodge")
 ```
 
-Upon looking in the graphs (especially the combined one), we can see the trend identified above. Customers have higher average ride lengths (about \~2200 seconds or 36m, 40s) compared to subscribers (about \~700 seconds or 11m, 40s). This infers that customers are on average likely to ride their Cyclistic bike almost 3x the length as subscribers. Therefore, if the company wants to target less consistent, butlonger-duration riders, they should focus on attracting more non-subscribing customers. This will be beneficial if Cyclistic bills per minute/timewise compared to upfront flat-rate.
+Upon looking in the graphs (especially the combined one), we can see the trend identified above. Customers have higher average ride lengths (about \~2200 seconds or 36m, 40s) compared to subscribers (about \~700 seconds or 11m, 40s). This infers that customers are on average likely to ride their Divvy bike almost 3x the length as subscribers. Therefore, if the company wants to target less consistent, butlonger-duration riders, they should focus on attracting more non-subscribing customers. This will be beneficial if Divvy bills per minute/timewise compared to upfront flat-rate.
 
 On the other hand, the number of rides chart show that Subscribers have a higher number of rides (almost 15 times more on peak days), while having lower average ride times. Looking at Divvy's pricing strategy, **this may be because of the perk "45 minutes free", which includes free unlocks and complementary 45 minute riding time before a charge of \$0.18 per minute**. So, taking this in account, these short rides by subscribers would come at no cost on average, fueling subscribers to take many more shorter distance rides, versus one longer ride, which may start incurring fees once the time passes 2,700 seconds (45 minutes).
 
@@ -421,7 +416,7 @@ Here's a recap about what we discovered during this data analysis project:
 
 ### How do Subscribers and Customers Use Bikeshare Differently?
 
-Our data has consistently shown that customers and subscribers use Divvy/Cyclistic's services very differently; **Customers use the service less often, but for longer amounts of time**, which generates high profit per customer; however, the trade off is that many customers only use the service a few times, and often only pay once or twice through the year.
+Our data has consistently shown that customers and subscribers use Divvy's services very differently; **Customers use the service less often, but for longer amounts of time**, which generates high profit per customer; however, the trade off is that many customers only use the service a few times, and often only pay once or twice through the year.
 
 So, to appeal to customers while improving profits, the bike share company should try to aim to upgrade them to paying subscribers; While subscribers often ride for free, reducing individual ride revenues and increasing wear from frequent bike use/docking, upgrading a customer allows the company to collect \$143 in subscription revenue annually (**which is almost worth 20 individual rides on average**).
 
@@ -435,7 +430,9 @@ knitr::include_graphics("DivvyBikeImage.jpg")
 
 It depends; If we look back on the data, we see that a annual subscription pass is worth around 20 individual 35-minute rides. So, if a customer is a more active user of the service, they would benefit from getting the annual subscription because it will save them money in the long run. If they use the service even more, they will get more out of the subscription because it also provides them with extra benefits similar to those provided with CitiBike's or Bay Wheel's subscription plans.
 
-However, since many of the customers only ride once or twice, it would not be worth it for everyone to get the subscription. In that case, appealing towards all riders would not be a good use of resources; Cyclistic must appeal to the non-subscribing customers who rely on the bikes the most, because they will be the most receptive to marketing campaigns and in the end, will be more likely to convert from customer to subscriber.
+However, since many of the customers only ride once or twice, it would not be worth it for everyone to get the subscription. In that case, appealing towards all riders would not be a good use of resources; Divvy must appeal to the non-subscribing customers who rely on the bikes the most, because they will be the most receptive to marketing campaigns and in the end, will be more likely to convert from customer to subscriber.
+
+### See my Code: [github.com/vchsi/DivvyAnalysis](https://www.github.com/vchsi/DivvyAnalysis)
 
 ### Works Cited
 
