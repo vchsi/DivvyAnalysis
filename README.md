@@ -1,1 +1,3 @@
-## See the attached RMarkdown File or the compiled HTML file for more information
+# Divvy Data Analysis #
+## A project by Vincent Hsiao ##
+--
