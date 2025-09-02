@@ -1,3 +1,3 @@
-# Divvy Data Analysis #
-## A project by Vincent Hsiao ##
+# Divvy Data Analysis 
+## A project by Vincent Hsiao
 --
